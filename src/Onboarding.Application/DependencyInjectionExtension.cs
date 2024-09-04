@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Onboarding.Application.AutoMapper;
+using Onboarding.Application.UseCases.Feedback.Register;
 using Onboarding.Application.UseCases.Tasks.Delete;
 using Onboarding.Application.UseCases.Tasks.GetAll;
 using Onboarding.Application.UseCases.Tasks.GetById;
@@ -25,6 +26,8 @@ public static class DependencyInjectionExtension
         servies.AddScoped<IGetAllTasksUseCase, GetAllTasksUseCase>();
         servies.AddScoped<IGetByIdTaskUseCase, GetByIdTaskUseCase>();
         servies.AddScoped<IDeleteTaskUseCase, DeleteTaskUseCase>();
+
+        servies.AddScoped<IRegisterFeedbackUseCase, RegisterFeedbackUseCase>();
     }
 
 }
