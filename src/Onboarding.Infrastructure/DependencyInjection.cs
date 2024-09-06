@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Onboarding.Domain.Entities;
 using Onboarding.Domain.Repositories;
 using Onboarding.Domain.Repositories.Feedback;
 using Onboarding.Domain.Repositories.Tasks;
@@ -29,5 +30,6 @@ public static class DependencyInjection
         var connectionString = configuration.GetConnectionString("DefaultConnection");
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 35));
         services.AddDbContext<OnboardingDbContext>(config => config.UseMySql(connectionString, serverVersion));
+        services.AddDbContext<PortalAuthDbContext>(config => config.UseMySql(connectionString, serverVersion));
     }
 }

@@ -1,6 +1,8 @@
 using Onboarding.Infrastructure;
 using Onboarding.API.Filters;
 using Onboarding.Application;
+using Onboarding.Domain.Entities;
+using Onboarding.Infrastructure.DataAcess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthorizationBuilder();
+builder.Services.AddIdentityApiEndpoints<PortalUser>().AddEntityFrameworkStores<PortalAuthDbContext>();
+
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -24,6 +30,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapGroup("/auth").MapIdentityApi<PortalUser>();
 
 app.UseAuthorization();
 
