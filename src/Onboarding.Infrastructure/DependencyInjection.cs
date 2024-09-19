@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Onboarding.Domain.Entities;
 using Onboarding.Domain.Repositories;
 using Onboarding.Domain.Repositories.Feedback;
+using Onboarding.Domain.Repositories.Post;
 using Onboarding.Domain.Repositories.Tasks;
 using Onboarding.Infrastructure.DataAcess;
 using Onboarding.Infrastructure.DataAcess.Repositories;
@@ -22,6 +23,7 @@ public static class DependencyInjection
         services.AddScoped<IWriteOnlyTaskRepository, TaskRepository>();
         services.AddScoped<IReadOnlyTaskRepository, TaskRepository>();
         services.AddScoped<IWriteOnlyFeedbackRepository, FeedbackRepository>();
+        services.AddScoped<IWriteOnlyPostRepository, PostRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 

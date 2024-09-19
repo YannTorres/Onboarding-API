@@ -7,4 +7,5 @@ internal class OnboardingDbContext : DbContext
 
     public DbSet<Domain.Entities.Task> Tasks { get; set; }
     public DbSet<Domain.Entities.Feedback> Feedbacks { get; set; }
+    public DbSet<Domain.Entities.Post> Posts { get; set; }
 }
