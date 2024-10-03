@@ -6,6 +6,7 @@ using Onboarding.Application.UseCases.Tasks.GetById;
 using Onboarding.Application.UseCases.Tasks.Register;
 using Onboarding.Communication.Requests;
 using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Tasks;
 
 namespace Onboarding.API.Controllers;
 [Route("api/[controller]")]

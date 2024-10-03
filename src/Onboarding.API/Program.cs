@@ -3,6 +3,7 @@ using Onboarding.API.Filters;
 using Onboarding.Application;
 using Onboarding.Domain.Entities;
 using Onboarding.Infrastructure.DataAcess;
+using Onboarding.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,4 +38,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await MigrateDataBase();
+
 app.Run();
+
+async System.Threading.Tasks.Task MigrateDataBase()
+{
+    await using var scoped = app.Services.CreateAsyncScope();
+    await DataBaseMigration.MigrateDataBase(scoped.ServiceProvider);
+}

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Tasks;
 using Onboarding.Domain.Repositories.Tasks;
 using System.Security.Cryptography.X509Certificates;
 

@@ -1,14 +1,24 @@
-﻿using Onboarding.Communication.Response;
+﻿using AutoMapper;
+using Onboarding.Communication.Response.Posts;
+using Onboarding.Domain.Repositories.Post;
 
 namespace Onboarding.Application.UseCases.Posts.GetAll;
 public class GetAllPostsUseCase : IGetAllPostsUseCase
 {
-    public GetAllPostsUseCase()
+    private readonly IReadOnlyPostRepository _repository;
+    private readonly IMapper _mapper;
+    public GetAllPostsUseCase(IMapper mapper, IReadOnlyPostRepository repository)
     {
-        
+        _mapper = mapper;
+        _repository = repository;
     }
-    public Task<ResponsePostsJson> Execute()
+    public async Task<ResponsePostsJson> Execute()
     {
-        throw new NotImplementedException();
+        var result = await _repository.GetAll();
+
+        return new ResponsePostsJson
+        {
+            Posts = _mapper.Map<List<ResponsePostJson>>(result)
+        };
     }
 }

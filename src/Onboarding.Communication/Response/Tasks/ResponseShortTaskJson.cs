@@ -1,6 +1,6 @@
 ﻿using Onboarding.Communication.Enums;
 
-namespace Onboarding.Communication.Response;
+namespace Onboarding.Communication.Response.Tasks;
 public class ResponseShortTaskJson
 {
     public long Id { get; set; }

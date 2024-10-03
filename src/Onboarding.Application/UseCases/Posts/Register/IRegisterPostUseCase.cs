@@ -1,5 +1,5 @@
 ﻿using Onboarding.Communication.Requests;
-using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Posts;
 
 namespace Onboarding.Application.UseCases.Posts.Register;
 public interface IRegisterPostUseCase

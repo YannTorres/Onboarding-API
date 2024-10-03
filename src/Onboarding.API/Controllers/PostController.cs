@@ -6,6 +6,7 @@ using Onboarding.Application.UseCases.Posts.GetById;
 using Onboarding.Application.UseCases.Posts.Register;
 using Onboarding.Communication.Requests;
 using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Posts;
 
 namespace Onboarding.API.Controllers;
 [Route("api/[controller]")]
@@ -48,7 +49,7 @@ public class PostController : ControllerBase
     {
         var response = await useCase.Execute();
 
-        return Created(string.Empty, response);
+        return Ok(response);
     }
 
     [HttpDelete]

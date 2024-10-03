@@ -1,4 +1,4 @@
-﻿using Onboarding.Communication.Response;
+﻿using Onboarding.Communication.Response.Posts;
 
 namespace Onboarding.Application.UseCases.Posts.GetById;
 public class GetByIdPostUseCase : IGetByIdPostUseCase

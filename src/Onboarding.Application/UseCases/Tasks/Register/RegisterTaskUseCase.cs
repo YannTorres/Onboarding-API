@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Onboarding.Communication.Requests;
-using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Tasks;
 using Onboarding.Domain.Repositories;
 using Onboarding.Domain.Repositories.Tasks;
 using Onboarding.Exception.ExceptionBase;

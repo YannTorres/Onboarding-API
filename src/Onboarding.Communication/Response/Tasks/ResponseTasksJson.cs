@@ -1,4 +1,4 @@
-﻿namespace Onboarding.Communication.Response;
+﻿namespace Onboarding.Communication.Response.Tasks;
 
 public class ResponseTasksJson
 {

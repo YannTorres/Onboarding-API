@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Onboarding.Application.UseCases.Tasks;
 using Onboarding.Communication.Requests;
-using Onboarding.Communication.Response;
+using Onboarding.Communication.Response.Feedback;
 using Onboarding.Domain.Entities;
 using Onboarding.Domain.Repositories;
 using Onboarding.Domain.Repositories.Feedback;

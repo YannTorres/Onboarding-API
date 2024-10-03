@@ -1,6 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Onboarding.Application.AutoMapper;
 using Onboarding.Application.UseCases.Feedback.Register;
+using Onboarding.Application.UseCases.Meets.Delete;
+using Onboarding.Application.UseCases.Meets.GetAll;
+using Onboarding.Application.UseCases.Meets.GetById;
+using Onboarding.Application.UseCases.Meets.Register;
 using Onboarding.Application.UseCases.Posts.Delete;
 using Onboarding.Application.UseCases.Posts.GetAll;
 using Onboarding.Application.UseCases.Posts.GetById;
@@ -37,6 +41,11 @@ public static class DependencyInjectionExtension
         servies.AddScoped<IGetByIdPostUseCase, GetByIdPostUseCase>();
         servies.AddScoped<IGetAllPostsUseCase, GetAllPostsUseCase>();
         servies.AddScoped<IDeletePostUseCase, DeletePostUseCase>();
+
+        servies.AddScoped<IDeleteMeetUseCase, DeleteMeetUseCase>();
+        servies.AddScoped<IRegisterMeetUseCase, RegisterMeetUseCase>();
+        servies.AddScoped<IGetAllMeetsUseCase, GetAllMeetsUseCase>();
+        servies.AddScoped<IGetByIdMeetUseCase, GetByIdMeetUseCase>();
     }
 
 }
