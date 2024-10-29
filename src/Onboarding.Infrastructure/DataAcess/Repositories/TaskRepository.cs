@@ -38,4 +38,12 @@ internal class TaskRepository : IWriteOnlyTaskRepository, IReadOnlyTaskRepositor
 
         return true;
     }
+
+    public async Task<List<Domain.Entities.Task>> FilterByMonth(DateTime date)
+    {
+        return await _dbcontext.Tasks.AsNoTracking()
+            .Where(d => d.CreatedAt.Month == date.Month)
+            .Where(d => d.CreatedAt.Year == date.Year)
+            .ToListAsync();
+    }
 }

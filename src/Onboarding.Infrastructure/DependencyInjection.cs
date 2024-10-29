@@ -25,6 +25,7 @@ public static class DependencyInjection
         services.AddScoped<IReadOnlyTaskRepository, TaskRepository>();
 
         services.AddScoped<IWriteOnlyFeedbackRepository, FeedbackRepository>();
+        services.AddScoped<IReadOnlyFeedbackRepository, FeedbackRepository>();
 
         services.AddScoped<IWriteOnlyPostRepository, PostRepository>();
         services.AddScoped<IReadOnlyPostRepository, PostRepository>();

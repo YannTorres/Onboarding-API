@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Onboarding.Application.UseCases.Feedback.Register;
 using Onboarding.Communication.Requests;
 using Onboarding.Communication.Response;

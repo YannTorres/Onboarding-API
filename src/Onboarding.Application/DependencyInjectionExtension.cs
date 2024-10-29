@@ -13,6 +13,7 @@ using Onboarding.Application.UseCases.Tasks.Delete;
 using Onboarding.Application.UseCases.Tasks.GetAll;
 using Onboarding.Application.UseCases.Tasks.GetById;
 using Onboarding.Application.UseCases.Tasks.Register;
+using Onboarding.Application.UseCases.Tasks.Reports;
 
 namespace Onboarding.Application;
 public static class DependencyInjectionExtension
@@ -46,6 +47,9 @@ public static class DependencyInjectionExtension
         servies.AddScoped<IRegisterMeetUseCase, RegisterMeetUseCase>();
         servies.AddScoped<IGetAllMeetsUseCase, GetAllMeetsUseCase>();
         servies.AddScoped<IGetByIdMeetUseCase, GetByIdMeetUseCase>();
+
+        servies.AddScoped<IGenerateReportTasks, GenerateReportTask>();
+        servies.AddScoped<IGenerateReportFeedbacks, GenerateReportFeedbacks>();
     }
 
 }
