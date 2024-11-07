@@ -4,6 +4,7 @@ using Onboarding.Application;
 using Onboarding.Domain.Entities;
 using Onboarding.Infrastructure.DataAcess;
 using Onboarding.Infrastructure.Migrations;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthorizationBuilder();
 builder.Services.AddIdentityApiEndpoints<PortalUser>().AddEntityFrameworkStores<PortalAuthDbContext>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
 
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
@@ -34,6 +42,7 @@ app.UseHttpsRedirection();
 
 app.MapGroup("/auth").MapIdentityApi<PortalUser>();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
