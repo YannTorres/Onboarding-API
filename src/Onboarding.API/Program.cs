@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGroup("/auth").MapIdentityApi<PortalUser>();
+app.MapGroup("/auth").MapIdentityApi<PortalUser>().AllowAnonymous();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Onboarding.Application.UseCases.Posts.Delete;
 using Onboarding.Application.UseCases.Posts.GetAll;
@@ -11,6 +12,7 @@ using Onboarding.Communication.Response.Posts;
 namespace Onboarding.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class PostController : ControllerBase
 {
     [HttpPost]
